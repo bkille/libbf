@@ -18,11 +18,11 @@ if ("${PROJECT_SOURCE_DIR}" STREQUAL "${CMAKE_SOURCE_DIR}")
 endif ()
 
 # Prohibit in-source builds.
-if ("${CMAKE_SOURCE_DIR}" STREQUAL "${CMAKE_BINARY_DIR}")
-  message(FATAL_ERROR "In-source builds are not allowed. Please use "
-                      "./configure to choose a build directory and "
-                      "initialize the build configuration.")
-endif ()
+#if ("${CMAKE_SOURCE_DIR}" STREQUAL "${CMAKE_BINARY_DIR}")
+  #message(FATAL_ERROR "In-source builds are not allowed. Please use "
+                      #"./configure to choose a build directory and "
+                      #"initialize the build configuration.")
+#endif ()
 
 # Silence warning CMP0042
 if (APPLE AND NOT DEFINED CMAKE_MACOSX_RPATH)
@@ -68,7 +68,7 @@ endif ()
 
 # -- libbf -------------------------------------------------------------------
 
-include_directories(${CMAKE_SOURCE_DIR})
+include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 
 set(libbf_sources
   src/bitvector.cpp
